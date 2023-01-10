@@ -3,7 +3,7 @@
 The parity wallet attack was the second largest hack back then, the attacker stole over 150,000 ETH. 
 
 
-## The Attack 
+## The Attack 
 The attack was possible because the 'initWallet' function wasn't protected. This allowed the attacker to call the function after the wallet was already in use. 
 
 ``` solidity
