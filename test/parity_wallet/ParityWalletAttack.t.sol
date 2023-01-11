@@ -14,7 +14,7 @@ contract ParityWalletAttack is Test, TestUtils {
     address public constant WALLET = 0xBEc591De75b8699A3Ba52F073428822d0Bfc0D7e;
 
     // We fork one block prior to the actual attack.
-    uint256 public constant BLOCK_NUMBER = 4043801;
+    uint256 public constant BLOCK_NUMBER = 4_043_801;
     uint256 public walletInitialBalance;
 
     function setUp() public {
@@ -37,7 +37,7 @@ contract ParityWalletAttack is Test, TestUtils {
         assertTrue(wallet.isOwner(address(this)));
 
         address attacker = 0xB3764761E297D6f121e79C32A65829Cd1dDb4D32;
-        uint256 amount = 82189000000000000000000;
+        uint256 amount = 82_189_000_000_000_000_000_000;
 
         wallet.execute(attacker, amount, new bytes(0));
 

@@ -15,7 +15,7 @@ contract ParityWalletAttack is Test, TestUtils {
     address public constant DESTROYOR = 0xae7168Deb525862f4FEe37d987A971b385b96952;
 
     // We fork one block prior to the actual attack.
-    uint256 public constant BLOCK_NUMBER = 4501968;
+    uint256 public constant BLOCK_NUMBER = 4_501_968;
 
     function setUp() public {
         cheat.createSelectFork("mainnet", BLOCK_NUMBER);
@@ -31,9 +31,9 @@ contract ParityWalletAttack is Test, TestUtils {
         assembly {
             codeSize := extcodesize(WALLET)
         }
-         assert(codeSize > 0);
+        assert(codeSize > 0);
         console.log("Wallet code size prior to the attack: ", codeSize);
-       
+
         vm.prank(address(DESTROYOR));
         wallet.kill(address(DESTROYOR));
     }
@@ -45,6 +45,5 @@ contract ParityWalletAttack is Test, TestUtils {
         }
         assertEq(codeSize, 0);
         console.log("Wallet code size after the attack: ", codeSize);
-        
     }
 }
