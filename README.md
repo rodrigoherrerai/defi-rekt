@@ -6,6 +6,11 @@
 </br>
 
 
+## Acknowledgments
+- This repo is inspired by [learn-evm-attacks](https://github.com/coinspect/learn-evm-attacks), although the main difference is that this repository focuses primarily on hacks that are historical (some of them very old "parity wallet").
+
+
+
 ## Reproduce 
 1. Clone the repo
 ```bash
