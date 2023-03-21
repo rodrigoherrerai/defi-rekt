@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >= 0.8.0;
 
-import "forge-std/Test.sol";
-
 import "test/utils/TestUtils.sol";
 
 interface ParityWalletInterface {
@@ -10,7 +8,7 @@ interface ParityWalletInterface {
     function isOwner(address _addr) external view returns (bool);
 }
 
-contract ParityWalletAttack is Test, TestUtils {
+contract ParityWalletAttack is TestUtils {
     address public constant WALLET = 0x863DF6BFa4469f3ead0bE8f9F2AAE51c91A907b4;
 
     address public constant DESTROYOR = 0xae7168Deb525862f4FEe37d987A971b385b96952;
